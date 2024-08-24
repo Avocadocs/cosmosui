@@ -72,10 +72,6 @@ pub fn (mut i Input) set_text(text string) {
 	i.text = text
 }
 
-pub fn (mut i Input) set_disable(disable bool) {
-	i.disable = disable
-}
-
 pub fn (i Input) draw(mut ctx gg.Context) {
 	ctx.draw_rect_filled(i.x, i.y, i.width, i.height, i.bg_color)
 
