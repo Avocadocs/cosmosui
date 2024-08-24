@@ -29,7 +29,7 @@ pub mut:
 	width         int
 	height        int
 	z_index       int
-	hidden       bool
+	hidden        bool
 	disabled      bool
 	text          string
 	state         ButtonState = .normal
@@ -51,7 +51,7 @@ pub:
 	height        int
 	z_index       int
 	text          string
-	disabled	  bool
+	disabled      bool
 	on_click      ButtonFn = unsafe { nil }
 	bg_color      gx.Color = cosmosui.button_bg_color
 	text_color    gx.Color = cosmosui.button_text_color

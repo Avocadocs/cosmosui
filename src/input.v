@@ -14,13 +14,13 @@ pub mut:
 	id            string
 	x             int
 	y             int
-	x_offset	  int
-	y_offset	  int
+	x_offset      int
+	y_offset      int
 	width         int
 	height        int
 	z_index       int
-	hidden       bool
-	disabled       bool
+	hidden        bool
+	disabled      bool
 	focused       bool
 	parent        &Window = unsafe { nil }
 	text          string
@@ -38,7 +38,7 @@ pub:
 	width         int
 	height        int
 	z_index       int
-	disabled       bool
+	disabled      bool
 	focused       bool
 	text          string
 	bg_color      gx.Color = cosmosui.input_bg_color
@@ -56,7 +56,7 @@ pub fn input(c InputParams) &Input {
 		height: c.height
 		z_index: c.z_index
 		text: c.text
-		disable: c.disable
+		disabled: c.disabled
 		bg_color: c.bg_color
 		border_color: c.border_color
 		text_color: c.text_color

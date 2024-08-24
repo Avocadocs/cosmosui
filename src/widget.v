@@ -12,7 +12,7 @@ mut:
 	width    int
 	height   int
 	z_index  int
-	hidden  bool
+	hidden   bool
 	// parent // TO DO
 	point_inside(x f32, y f32) bool
 	draw(mut ctx gg.Context)

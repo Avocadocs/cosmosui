@@ -13,13 +13,11 @@ pub mut:
 	id           string
 	x            int
 	y            int
-	x_offset	 int
-	y_offset	 int
+	x_offset     int
+	y_offset     int
 	width        int
 	height       int
-	z_index	  int
-	x_offset	 int
-	y_offset	      int
+	z_index      int
 	hidden       bool
 	disabled     bool
 	parent       &Window = unsafe { nil }
@@ -38,8 +36,8 @@ pub:
 	width        int = 20
 	height       int = 20
 	z_index      int
-	hidden bool
-	disabled bool
+	hidden       bool
+	disabled     bool
 	checked      bool
 	text         string
 	bg_color     gx.Color = cosmosui.checkbox_bg_color

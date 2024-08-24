@@ -18,7 +18,7 @@ pub struct Scrollview {
 pub mut:
 	active_thumb      ActiveThumb
 	layout            &Layout = unsafe { nil }
-	scrollbar_size	int
+	scrollbar_size    int
 	dragging          bool
 	drag_start_offset f32
 	scroll_x          int
@@ -33,10 +33,10 @@ pub mut:
 }
 
 pub struct ScrollviewParams {
-	layout &Layout = unsafe { nil }
-	scrollbar_size  int     = cosmosui.scrollbar_size
-	track_color	 gx.Color = cosmosui.scrollbar_track_color
-	thumb_color	 gx.Color = cosmosui.scrollbar_thumb_color
+	layout         &Layout  = unsafe { nil }
+	scrollbar_size int      = cosmosui.scrollbar_size
+	track_color    gx.Color = cosmosui.scrollbar_track_color
+	thumb_color    gx.Color = cosmosui.scrollbar_thumb_color
 }
 
 pub fn scrollview(c ScrollviewParams) &Scrollview {
@@ -59,15 +59,16 @@ pub fn (mut s Scrollview) draw(ctx gg.Context) {
 			s.scrollbar_size, s.track_color)
 		ctx.draw_rect_filled(layout.x +
 			int(f32(s.scroll_x) * (f32(layout.width - s.thumb_width) / f32(max_scroll_x))),
-			layout.y + layout.height - s.scrollbar_size, s.thumb_width, s.scrollbar_size, s.thumb_color)
+			layout.y + layout.height - s.scrollbar_size, s.thumb_width, s.scrollbar_size,
+			s.thumb_color)
 	}
 
 	if s.scrollbar_y {
 		s.thumb_height = int((f32(layout.height) / f32(layout.total_children_height)) * f32(layout.height))
 		max_scroll_y := layout.total_children_height - layout.height
 
-		ctx.draw_rect_filled(layout.x + layout.width - s.scrollbar_size, layout.y, s.scrollbar_size, layout.height,
-			s.track_color)
+		ctx.draw_rect_filled(layout.x + layout.width - s.scrollbar_size, layout.y, s.scrollbar_size,
+			layout.height, s.track_color)
 		ctx.draw_rect_filled(layout.x + layout.width - s.scrollbar_size, layout.y +
 			int(f32(s.scroll_y) * (f32(layout.height - s.thumb_height) / f32(max_scroll_y))),
 			s.scrollbar_size, s.thumb_height, s.thumb_color)

@@ -38,7 +38,7 @@ pub mut:
 	width          int
 	height         int
 	z_index        int
-	hidden        bool
+	hidden         bool
 	gap            int
 	flex_direction FlexDirection
 	// align_items AlignItems
@@ -59,7 +59,7 @@ pub:
 	width          int
 	height         int
 	z_index        int
-	hidden       bool
+	hidden         bool
 	flex_direction FlexDirection = .row
 	// align_items AlignItems = .start
 	gap      int
@@ -89,9 +89,9 @@ pub fn (f Flexbox) point_inside(x f32, y f32) bool {
 
 pub fn (mut f Flexbox) draw(mut ctx gg.Context) {
 	ctx.scissor_rect(f.x, f.y, f.width, f.height)
-	
+
 	ctx.draw_rect_empty(f.x, f.y, f.width, f.height, gx.red)
-	
+
 	mut offset := match f.flex_direction {
 		.row, .row_reverse {
 			f.x
@@ -124,7 +124,7 @@ pub fn (mut f Flexbox) draw(mut ctx gg.Context) {
 		} else {
 			child.set_pos(f.x - scroll_x, offset - scroll_y)
 		}
-		
+
 		child.draw(mut ctx)
 		if f.flex_direction == .row || f.flex_direction == .row_reverse {
 			offset += child.width
